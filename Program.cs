@@ -21,22 +21,40 @@ namespace InfosoftTraining
             lessons.Lesson2();
             Console.WriteLine();
 
-            //Lesson 3 Variables and Data Types
+            //Lesson 3 Basic Input and Output 
             lessons.Lesson3();
             Console.WriteLine();
 
 
-            //Lesson 4 Arithmetic Operators
+            //Lesson 4 Operators and Expressions
             lessons.Lesson4();
             Console.WriteLine();
 
-            //Lesson 5 Arithmetic Operators
+            //Lesson 5 Conditional Statements 
             lessons.Lesson5();
             Console.WriteLine();
 
 
-            //Lesson 6 Arithmetic Operators
+            //Lesson 6 Switch Statements 
             lessons.Lesson6();
+            Console.WriteLine();
+
+            //Lesson 7 Loops
+            lessons.Lesson7();
+            Console.WriteLine();
+
+            //Lesson 7.5 For-Loops
+            lessons.Lesson75();
+            Console.WriteLine();
+
+
+            //Lesson 8 Arrays
+            lessons.Lesson8();
+            Console.WriteLine();
+
+
+            //Lesson 9 Functions
+            lessons.Lesson9();
             Console.WriteLine();
 
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,12 +82,12 @@ namespace InfosoftTraining
 
         }
         // Lesson 5 Conditional Statements
-        
+
         public void Lesson5()
         {
             Console.WriteLine("LESSON 5 CONDITIONAL STATEMENTS");
 
-            Console.WriteLine("Enter your grade to Calculate your GPA");
+            Console.WriteLine("Enter your grade to Calculate your GPA and see if you passed.");
 
             Console.Write("Math          :");
             double math = Convert.ToSingle(Console.ReadLine());
@@ -119,7 +120,9 @@ namespace InfosoftTraining
         {
 
             Console.WriteLine("LESSON 6 SWITCH STATEMENTS");
-            Console.WriteLine("ONLY USE NUMBERS");
+
+            Console.WriteLine("ONLY USE NUMBERS AND IN A FORMAT EX. MONTH: 12 DAY: 17 YEAR: 2002");
+
 
             Console.Write("Month :   ");
             int month = Convert.ToInt32(Console.ReadLine());
@@ -177,8 +180,123 @@ namespace InfosoftTraining
                     break;
             }
 
-            if (monthWord != "") Console.WriteLine(monthWord + " " + day + ", " + year);
+            if (day <= 31)
+            {
+                if (monthWord != "") Console.WriteLine(monthWord + " " + day + ", " + year);
+            }
+            else Console.WriteLine("Invalid Day, Day is only up to 31.");
+
+
 
         }
+        // Lesson 7 While and Do-While Loops
+        public void Lesson7()
+        {
+            Console.WriteLine("LESSON 7 LOOPS");
+
+            int lives = 3;
+
+            string correctAnswer = "Infosoft";
+            string answer;
+
+            while (lives > 0)
+            {
+                Console.WriteLine("Lives : " + lives);
+                Console.WriteLine("What is the name of the company that you are working for right now?");
+                Console.WriteLine();
+                Console.Write("Answer : ");
+                answer = Console.ReadLine();
+
+
+
+                if (answer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("CORRECT!");
+                    break;
+                }
+                else lives--;
+
+                if (lives == 0) Console.WriteLine("WRONG! NO LIVES LEFT YOU LOST");
+
+                Console.WriteLine();
+
+            }
+
+        }
+        // Lesson 7.5 For-Loops
+        public void Lesson75()
+        {
+            Console.WriteLine("LESSON 7.5 FOR-LOOPS");
+
+            string[] username = { "Karl", "Vincent", "Paclar" };
+            string[] password = { "password", "password123", "passwordnikarl" };
+
+            Console.Write("Username : ");
+            string authUsername = Console.ReadLine();
+
+            Console.Write("Password : ");
+            string authPassword = Console.ReadLine();
+
+            bool isFound = false;
+
+            for (int i = 0; i < username.Length; i++)
+            {
+                if (authUsername.Equals(username[i], StringComparison.OrdinalIgnoreCase) && authPassword.Equals(password[i], StringComparison.OrdinalIgnoreCase))
+                {
+                    isFound = true;
+                    Console.WriteLine("Welcome, " + username[i]);
+                    break;
+                }
+            }
+
+            if (!isFound) Console.WriteLine("Account Not Found!");
+        }
+        // Lesson 8 For-Loops
+        public void Lesson8()
+        {
+            int input;
+
+            string[] email = {"paclarvincentkarl@gmail.com",
+                              "vincentkarlpaclar@gmail.com",
+                              "karlvincentpaclar@gmail.com"};
+
+            string[] username = { "karl",
+                                  "vincent", 
+                                  "paclar" };
+
+            string[] password = { "karlvincent",
+                                 "vincentkarl",
+                                 "paclarkarl"};
+
+            
+            Console.Write("Index   : ");
+
+            int index = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Email   : " + email[index]);
+            Console.WriteLine("Username: " + username[index]);
+            Console.WriteLine("Password: " + password[index]);
+        }
+
+        // Lesson 9 Functions
+        public void Lesson9()
+        {
+
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+           Console.WriteLine(add(numbers));
+
+        }
+        static int add(int[] numbers)
+        {
+            int sum = 0;
+            for(int i = 0;i < numbers.Length;i++)
+            {
+                sum += numbers[i];
+            }
+            return sum;
+        }
+
+
     }
 }
